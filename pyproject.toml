@@ -29,7 +29,7 @@ dev = [
 sources = ["src"]
 
 [tool.hatch.build.targets.wheel]
-packages = ["osource_reprod"]
+packages = ["src/osource_reprod"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

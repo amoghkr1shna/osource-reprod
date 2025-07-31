@@ -1,0 +1,9 @@
+site_name: osource-reprod
+site_description: Open source reproducibility project
+repo_url: https://github.com/yourusername/osource-reprod
+
+theme:
+  name: readthedocs
+
+nav:
+  - Home: index.md
