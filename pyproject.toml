@@ -1,5 +1,5 @@
 [build-system]
-requires = ["hatchling"]
+requires = ["hatchling>=1.20.0"]
 build-backend = "hatchling.build"
 
 [project]
@@ -20,10 +20,16 @@ dev = [
     "pytest-cov",
     "ruff",
     "mypy",
+    "coverage",
 ]
 
+
+
+[tool.hatch.build]
+sources = ["src"]
+
 [tool.hatch.build.targets.wheel]
-packages = ["src/osource_reprod"]
+packages = ["osource_reprod"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
@@ -32,6 +38,12 @@ pythonpath = ["src"]
 
 [tool.coverage.run]
 source = ["src"]
+branch = true
+parallel = true
+omit = [
+    "tests/*",
+    "setup.py",
+]
 
 [tool.coverage.report]
 exclude_lines = [
@@ -41,6 +53,8 @@ exclude_lines = [
     "raise NotImplementedError",
     "if __name__ == .__main__.:",
 ]
+show_missing = true
+fail_under = 80
 
 [tool.mypy]
 python_version = "3.10"

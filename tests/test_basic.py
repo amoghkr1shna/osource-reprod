@@ -1,6 +1,7 @@
 """Test module for osource-reprod package."""
 
-from osource_reprod import hello_world, add_numbers
+from osource_reprod import add_numbers, hello_world
+
 
 def test_hello_world():
     """Test the hello_world function."""
