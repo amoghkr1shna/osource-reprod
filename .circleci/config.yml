@@ -41,9 +41,9 @@ jobs:
           name: Run tests with coverage
           command: |
             uv run pytest --cov=src --cov-report=html --cov-report=xml --junitxml=test-results/junit.xml
-            coverage report
-            coverage xml
-            coverage html
+            uv run coverage report
+            uv run coverage xml
+            uv run coverage html
 
       - run:
           name: Build documentation
