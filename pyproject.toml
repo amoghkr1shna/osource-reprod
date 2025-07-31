@@ -22,9 +22,13 @@ dev = [
     "mypy",
 ]
 
+[tool.hatch.build.targets.wheel]
+packages = ["src/osource_reprod"]
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 junit_family = "xunit2"
+pythonpath = ["src"]
 
 [tool.coverage.run]
 source = ["src"]
@@ -44,10 +48,12 @@ warn_return_any = true
 warn_unused_configs = true
 disallow_untyped_defs = true
 check_untyped_defs = true
+packages = ["osource_reprod"]
 
 [tool.ruff]
 line-length = 88
 target-version = "py310"
+src = ["src"]
 
 [tool.ruff.lint]
 select = ["E", "F", "B", "I"]
